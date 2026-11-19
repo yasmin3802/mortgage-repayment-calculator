@@ -164,7 +164,6 @@ body {
   background-color: var(--white);
   border: 1px solid var(--slate-500);
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease;
 }
 
 .input-group:hover {
@@ -194,7 +193,6 @@ body {
   font-weight: 700;
   color: var(--slate-700);
   background-color: var(--slate-100);
-  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 /* Focus state: lime border and lime addon */
@@ -230,7 +228,6 @@ body {
   border: 1px solid var(--slate-500);
   border-radius: 0.25rem;
   cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .radio:hover {
@@ -280,7 +277,6 @@ body {
   border: 0;
   border-radius: 999px;
   cursor: pointer;
-  transition: background-color 0.15s ease;
 }
 
 .btn:hover {
@@ -426,4 +422,23 @@ body {
   .summary__total {
     font-size: 2rem;
   }
+
+  /* Only animate for people who haven't asked for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .input-group {
+    transition: border-color 0.15s ease;
+  }
+
+  .input-group__addon {
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .radio {
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .btn {
+    transition: background-color 0.15s ease;
+  }
+}
 }
